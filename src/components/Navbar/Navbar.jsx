@@ -17,22 +17,11 @@ const Navbar = () => {
               <NavLink to='/'
               className={({ isActive }) =>
                 isActive
-                  ? "text-green-600 border  rounded-lg border-[#58d4db77]  font-bold mr-2 "
-                  : "font-bold mr-2"
+                  ? "text-green-600 border  rounded-lg border-[#58d4db77]  font-bold  "
+                  : "font-bold "
               }
               >
               <span className="p-2 text-lg font-bold">Home</span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to='/availabefoods'
-              className={({ isActive }) =>
-                isActive
-                  ? "text-green-600 border  rounded-lg border-[#58d4db77]  font-bold mr-2 "
-                  : "font-bold mr-2"
-              }
-              >
-              <span className="p-2 text-lg font-bold">Available Foods</span>
               </NavLink>
             </li>
 
@@ -40,21 +29,32 @@ const Navbar = () => {
               <NavLink to='/addfood'
               className={({ isActive }) =>
                 isActive
-                  ? "text-green-600 border  rounded-lg border-[#58d4db77]  font-bold mr-2 "
-                  : "font-bold mr-2"
+                  ? "text-green-600 border  rounded-lg border-[#58d4db77]  font-bold  "
+                  : "font-bold "
               }
               >
               <span className="p-2 text-lg font-bold">Add Food</span>
               </NavLink>
             </li>
 
+            <li>
+              <NavLink to='/availabefoods'
+              className={({ isActive }) =>
+                isActive
+                  ? "text-green-600 border  rounded-lg border-[#58d4db77]  font-bold  "
+                  : "font-bold "
+              }
+              >
+              <span className="p-2 text-lg font-bold">Available Foods</span>
+              </NavLink>
+            </li>
 
             <li>
               <NavLink to='/managefoods'
               className={({ isActive }) =>
                 isActive
-                  ? "text-green-600 border  rounded-lg border-[#58d4db77]  font-bold mr-2 "
-                  : "font-bold mr-2"
+                  ? "text-green-600 border  rounded-lg border-[#58d4db77]  font-bold  "
+                  : "font-bold "
               }
               >
               <span className="p-2 text-lg font-bold">Manage My Foods</span>
@@ -65,8 +65,8 @@ const Navbar = () => {
               <NavLink to='/foodrequests'
               className={({ isActive }) =>
                 isActive
-                  ? "text-green-600 border  rounded-lg border-[#58d4db77]  font-bold mr-2 "
-                  : "font-bold mr-2"
+                  ? "text-green-600 border  rounded-lg border-[#58d4db77]  font-bold  "
+                  : "font-bold "
               }
               >
               <span className="p-2 text-lg font-bold">My Food Request</span>
@@ -75,10 +75,11 @@ const Navbar = () => {
 
 
 
-  
             {!user && (
               <li>
-                <NavLink to='/login'>Login</NavLink>
+                <NavLink to='/login'>
+                  <span className="p-1 bg-inherit text-lg font-bold">Login</span>
+                  </NavLink>
               </li>
             )}
           </ul>

@@ -6,6 +6,9 @@ import AvailableFoods from "../pages/AvailableFoods/AvailableFoods";
 import AddFood from "../pages/AddFoods/AddFood";
 import Login from "../pages/Authentication/Login";
 import SignUp from "../pages/Authentication/SignUp";
+import ManageMyFoods from "../pages/ManageFOODS/ManageMyFoods";
+import MyFoodRequests from "../pages/MyFoodRequests/MyFoodRequests";
+import Sliders from "../components/Sliders";
 
 const router = createBrowserRouter([
     {
@@ -13,6 +16,11 @@ const router = createBrowserRouter([
       errorElement: <Error></Error>,
       element: <Root></Root>,
       children: [
+        {
+          path: "/",
+          element: <Sliders></Sliders>,
+        }
+        ,
         {
             path: "/login",
             element: <Login></Login>,
@@ -30,10 +38,12 @@ const router = createBrowserRouter([
             element: <AddFood></AddFood>
         },
         {
-          path: '/managefoods'
+          path: '/managefoods',
+          element: <ManageMyFoods></ManageMyFoods>
         },
         {
-          path: '/foodrequests'
+          path: '/foodrequests',
+          element: <MyFoodRequests></MyFoodRequests>
         }
       ],
     },
