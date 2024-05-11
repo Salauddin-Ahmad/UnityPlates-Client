@@ -9,6 +9,7 @@ import SignUp from "../pages/Authentication/SignUp";
 import ManageMyFoods from "../pages/ManageFOODS/ManageMyFoods";
 import MyFoodRequests from "../pages/MyFoodRequests/MyFoodRequests";
 import Sliders from "../components/Sliders";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -35,15 +36,21 @@ const router = createBrowserRouter([
         },
         {
             path: "/addfood",
-            element: <AddFood></AddFood>
+            element: <PrivateRoute>
+              <AddFood></AddFood>
+            </PrivateRoute>
         },
         {
           path: '/managefoods',
-          element: <ManageMyFoods></ManageMyFoods>
+          element: <PrivateRoute>
+            <ManageMyFoods></ManageMyFoods>
+          </PrivateRoute>
         },
         {
           path: '/foodrequests',
-          element: <MyFoodRequests></MyFoodRequests>
+          element: <PrivateRoute>
+            <MyFoodRequests></MyFoodRequests>
+          </PrivateRoute>
         }
       ],
     },

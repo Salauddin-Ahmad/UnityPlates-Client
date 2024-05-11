@@ -20,9 +20,7 @@ const SignUp = () => {
     try {
       //2. User Registration
       const result = await createUser(email, pass)
-
       await updateUserProfile(name, photo)
-
       // Optimistic UI Update
       setUser({ ...result?.user, photoURL: photo, displayName: name })
     //   const { data } = await axios.post(
