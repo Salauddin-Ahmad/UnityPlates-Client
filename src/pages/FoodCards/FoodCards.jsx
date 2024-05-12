@@ -26,13 +26,13 @@ const FoodCards = () => {
             <img
               src={food.image}
               alt={food.foodName}
-              className="w-full h-36 object-cover mb-2 rounded-md"
+              className="card-img-top w-full h-[200px]  mb-2 rounded-md"
             />
             <h3 className="text-xl font-bold">{food.foodName}</h3>
 
             {/*MARK: donator info*/}
             <div className="text-lg">
-              <p >Dontaor: {food.userDetails.name}</p>
+              <p>Dontaor: {food.userDetails.name}</p>
               <div className="flex items-center gap-5 py-2">
                 <p className="">Image: </p>
                 <img
@@ -49,7 +49,7 @@ const FoodCards = () => {
             <p className="text-lg">Expiry Date: {food.expiredDate}</p>
             <p className="text-lg">Additional note: {food.additionalNotes}</p>
             <Link to={`/foodDetails/${food._id}`}>
-            <button className="btn btn-accent mt-2">View Details</button>
+              <button className="btn btn-accent mt-2">View Details</button>
             </Link>
           </div>
         ))}

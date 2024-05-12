@@ -17,6 +17,7 @@ const AddFood = () => {
     const pickupLocation = form.pickupLocation.value;
     const expiredDate = form.expiredDate.value;
     const additionalNotes = form.additionalNotes.value;
+    const status = 'available';
 
     // user info from authProvider
     const userDetails = {
@@ -33,6 +34,7 @@ const AddFood = () => {
       expiredDate,
       additionalNotes,
       userDetails,
+      status,
     };
     console.log(foodData);
 
