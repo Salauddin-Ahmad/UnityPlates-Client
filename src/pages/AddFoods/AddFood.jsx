@@ -2,8 +2,11 @@ import axios from "axios";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
 import { Navigate } from "react-router-dom";
-
+import DatePicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
+import { useState } from "react";
 const AddFood = () => {
+  const [startDate, setStartDate] = useState(new Date())
   const userr = useAuth();
   const user = userr.user;
   console.log();
@@ -15,7 +18,7 @@ const AddFood = () => {
     const image = form.image.value;
     const foodQuantity = parseFloat(form.foodQuantity.value);
     const pickupLocation = form.pickupLocation.value;
-    const expiredDate = form.expiredDate.value;
+    const expiredDate = startDate;
     const additionalNotes = form.additionalNotes.value;
     const status = 'available';
 
@@ -144,15 +147,22 @@ const AddFood = () => {
                   >
                     Expiry Date
                   </label>{" "}
-                  <input
+                  {/* <input
                     type="text"
                     name="expiredDate"
                     id="expiredDate"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                     placeholder=" Expired Date/Time"
                     required
-                  />
+                  /> */}
+                  <DatePicker
+                className='border px-[20px] py-2 bg-slate-700 rounded-xl'
+                selected={startDate}
+                onChange={date => setStartDate(date)}
+              />
+
                 </div>
+                
 
                 {/* MARK: Additional Notes */}
                 <div className="w-full">

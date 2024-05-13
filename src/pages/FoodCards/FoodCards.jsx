@@ -53,6 +53,12 @@ const FoodCards = () => {
             </Link>
           </div>
         ))}
+
+    <div className="md:col-span-3 lg:col-span-3 w-full flex  justify-center">
+     <Link to={`/availabefoods`}>
+          <button className="btn btn-accent mt-2">Show All Available Foods</button>
+        </Link>
+    </div>
       </div>
     </>
   );

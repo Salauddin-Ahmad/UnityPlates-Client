@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+/* eslint-disable react/prop-types */
+import  { useState, useEffect } from 'react';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 
@@ -81,7 +82,7 @@ const AvailableFoods = () => {
 
 const FoodItem = ({ food }) => {
     return (
-        <div className="card border rounded-xl bg-orange-100">
+        <div className="card border rounded-xl bg-orange-100 ">
             <img src={food.image} className="card-img-top rounded-xl" alt={food.name} />
             <div className="card-body">
                 <h5 className="card-title">Food Name: {food.foodName}</h5>
