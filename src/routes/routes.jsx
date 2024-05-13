@@ -11,6 +11,7 @@ import Sliders from "../components/Sliders";
 import PrivateRoute from "./PrivateRoute";
 import FoodCards from "../pages/FoodCards/FoodCards";
 import FoodDetails from "../pages/FoodCards/FoodDetails";
+import UpdateFood from "@/pages/ManageFOODS/UpdateFood";
 
 const router = createBrowserRouter([
   {
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/updateFood/:id",
-        element: <updateFoods></updateFoods>,
+        element: <UpdateFood></UpdateFood>,
       },
       {
         path: "/login",
