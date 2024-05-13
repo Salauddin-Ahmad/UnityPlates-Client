@@ -80,6 +80,7 @@ const AvailableFoods = () => {
     );
 };
 
+// mapped food item 
 const FoodItem = ({ food }) => {
     return (
         <div className="card border rounded-xl bg-orange-100 ">

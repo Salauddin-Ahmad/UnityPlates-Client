@@ -2,6 +2,7 @@
 import useAuth from "@/hooks/useAuth";
 import axios from "axios";
 import { useState } from "react";
+import toast from "react-hot-toast";
 import { NavLink } from "react-router-dom";
 
 const Modal = ({ onClose, foodDetails }) => {
@@ -35,9 +36,11 @@ const Modal = ({ onClose, foodDetails }) => {
 
       // Close the modal
       onClose();
-    } catch (error) {
-      console.error('Error confirming request:', error);
-    }
+       // Show a toast notification
+       toast.success('Requested For Food Successfully');
+      } catch (error) {
+        console.error('Error confirming request:', error);
+      }
   };
 
   return (

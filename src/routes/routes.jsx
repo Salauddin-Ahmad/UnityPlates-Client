@@ -34,6 +34,10 @@ const router = createBrowserRouter([
         </PrivateRoute>,
       },
       {
+        path: "/updateFood/:id",
+        element: <updateFoods></updateFoods>,
+      },
+      {
         path: "/login",
         element: <Login></Login>,
       },
