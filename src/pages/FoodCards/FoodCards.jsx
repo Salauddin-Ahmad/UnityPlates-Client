@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const FoodCards = () => {
   const [foods, setFoods] = useState([]);
   console.log(foods);
-  useEffect(() => {
+    useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_API_URL}/foods`)
       .then((res) => {
