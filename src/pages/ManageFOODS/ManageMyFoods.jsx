@@ -11,7 +11,7 @@ const ManageMyFoods = () => {
     const users = useAuth();
     const user = users.user
     const email = user.email
-    // console.log(email);
+    console.log(email);
 
     // fetch all the food by email from db
     useEffect(() => {
