@@ -6,18 +6,18 @@ import { Link } from 'react-router-dom';
 const ManageMyFoods = () => {
     const [control, setControl] = useState(false);
     const [foods, setFoods] = useState([]);
-    console.log(foods)
+    // console.log(foods)
 
     const users = useAuth();
     const user = users.user
     const email = user.email
-    console.log(email);
+    // console.log(email);
 
     // fetch all the food by email from db
     useEffect(() => {
         axios.get(`${import.meta.env.VITE_API_URL}/manageAllFoods/${email}`)
         .then((res) => {
-            console.log(res.data);
+            // console.log(res.data);
             setFoods(res.data);
         })
     },[email,control])
@@ -29,7 +29,7 @@ const handleDelete = () => {
     
     return (
 <>
-<div className="overflow-x-auto lg:mx-20 ">
+<div className="overflow-x-auto lg:mx-20 xl:mx-24 ">
     <table className="table-auto">
 
         {/* head of the table */}

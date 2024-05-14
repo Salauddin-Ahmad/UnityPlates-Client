@@ -1,7 +1,7 @@
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
-import { Navigate } from "react-router-dom";
+// import {  useNavigate } from "react-router-dom";
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import { useState } from "react";
@@ -9,6 +9,9 @@ const AddFood = () => {
   const [startDate, setStartDate] = useState(new Date())
   const userr = useAuth();
   const user = userr.user;
+
+  // navigation 
+  // const navigate = useNavigate();
   console.log();
 
   const handleSubmit = async (event) => {
@@ -48,7 +51,7 @@ const AddFood = () => {
       );
       console.log(data);
       toast.success("Food Added Successfully!");
-      Navigate("/");
+      // navigate("/");
     } catch (err) {
       console.log(err);
     }
