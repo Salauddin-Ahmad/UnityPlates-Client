@@ -10,6 +10,7 @@ import {
   } from "firebase/auth";
   import { createContext, useState, useEffect } from "react";
 import auth from "../firebase.config";
+import axios from "axios";
   
   export const AuthContext = createContext();
   const googleProvider = new GoogleAuthProvider();
@@ -40,8 +41,12 @@ import auth from "../firebase.config";
       return signInWithPopup(auth, gitHubProvider);
     };
     // sign out
-    const logOut = () => {
+    const logOut = async () => {
       setUser(null);
+      const { data } = await axios(`${import.meta.env.VITE_API_URL}/logout`, {
+        withCredentials: true,
+      })
+      console.log(data);
       signOut(auth);
     };
   

@@ -1,15 +1,16 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const FoodCards = () => {
   const [foods, setFoods] = useState([]);
-  console.log(foods);
+  // console.log(foods);
     useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_API_URL}/foods`)
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setFoods(res.data);
       })
       .catch((err) => console.log(err));
@@ -17,6 +18,15 @@ const FoodCards = () => {
 
   return (
     <>
+        <Helmet>
+        <title> UnityPlates </title>
+        <meta name="HOME" content="HOME" />
+      </Helmet>
+
+<div className=" my-8">
+  <h1 className=" font-bold text-3xl text-center">Featured Foods </h1>
+  <p className="text-base w-[85%] mx-auto">Welcome to our Featured Foods section, where acts of generosity come to life. Here, youll find a heartwarming collection of donated foods from our compassionate community members. Each item represents a story of care, compassion, and solidarity, ready to nourish those in need. Whether its a homemade meal, fresh produce, or pantry staples, these featured foods embody the spirit of giving. Explore our curated selection and join us in spreading kindness, one meal at a time.</p>
+</div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {foods.map((food) => (
           <div

@@ -82,7 +82,7 @@ const Navbar = () => {
         </ul>
   </>
   return (
-    <div className="navbar bg-base-100 shadow-xl  mx-auto">
+    <div className="navbar bg-[#FFFAE6] shadow-xl  mx-auto">
       <div className="flex-1">
         
       <div className="dropdown relative">

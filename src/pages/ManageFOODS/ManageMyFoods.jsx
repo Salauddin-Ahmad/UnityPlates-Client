@@ -1,6 +1,7 @@
 import useAuth from "@/hooks/useAuth";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -17,7 +18,9 @@ const ManageMyFoods = () => {
   // fetch all the food by email from db
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_API_URL}/manageAllFoods/${email}`)
+      .get(`${import.meta.env.VITE_API_URL}/manageAllFoods/${email}`, {
+        withCredentials: true,
+      })
       .then((res) => {
         // console.log(res.data);
         setFoods(res.data);
@@ -61,7 +64,6 @@ const ManageMyFoods = () => {
   //   });
   // };
 
-
   const handleDelete = (id) => {
     Swal.fire({
       title: "Do you want to delete this item?",
@@ -76,7 +78,9 @@ const ManageMyFoods = () => {
           .then((res) => {
             if (res.data.deletedCount > 0) {
               // Update state to remove the deleted item from the list
-              setFoods((prevFoods) => prevFoods.filter((food) => food._id !== id));
+              setFoods((prevFoods) =>
+                prevFoods.filter((food) => food._id !== id)
+              );
               Swal.fire("Deleted!", "The item has been deleted.", "success");
             } else {
               Swal.fire("Error", "Failed to delete the item.", "error");
@@ -96,9 +100,17 @@ const ManageMyFoods = () => {
       }
     });
   };
-  
+
   return (
     <>
+      <Helmet>
+        <title> SkyLineEstates | Manage Foods </title>
+        <meta
+          name="ManageFoods"
+          content="Manage All the Foods."
+        />
+      </Helmet>
+
       <div className="overflow-x-auto lg:mx-20 xl:mx-24 ">
         <table className="table-auto">
           {/* head of the table */}

@@ -2,17 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 
-.custom-overlay-class {
-    background-color: rgba(156, 146, 146, 0.5); 
-    position: fixed;
-    top: 5%;
-    left: 80px;
-    right: 35%;
-    bottom: 10%;
-    z-index: 1000; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-   */

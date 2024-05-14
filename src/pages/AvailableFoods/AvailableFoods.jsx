@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const AvailableFoods = () => {
   const [allFoods, setAllFoods] = useState([]);
@@ -55,6 +56,13 @@ const AvailableFoods = () => {
 
   return (
     <>
+      <Helmet>
+        <title> UnityPlates | All Foods </title>
+        <meta
+          name="All Foods Page"
+          content="Show all available Foods information"
+        />
+      </Helmet>
       <div className="container">
         <div className=" flex gap-4 justify-center my-6">
           <input

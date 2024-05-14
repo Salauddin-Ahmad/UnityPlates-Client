@@ -5,6 +5,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import toast from "react-hot-toast";
 import useAuth from "@/hooks/useAuth";
+import { Helmet } from "react-helmet-async";
 
 // for navigation (don't worked for me yet {import problems})
 // import { useHistory } from "react-router-dom";
@@ -69,7 +70,10 @@ const UpdateFood = () => {
     try {
       const { data } = await axios.put(
         `${import.meta.env.VITE_API_URL}/updatesFoodData/${id}`,
-        foodData
+        foodData,
+        {
+          withCredentials: true,
+        }
       );
       console.log(data);
       toast.success("Food Updated Successfully!");
@@ -80,7 +84,12 @@ const UpdateFood = () => {
   };
   return (
     <>
-      <section className="">
+        <Helmet>
+        <title> UnityPlates | Update Food Details</title>
+        <meta name="description" content="Login to your SkyLineEstates account." />
+      </Helmet>
+
+      <section className="my-8">
         <div className="py-8 px-4 mx-auto max-w-2xl bg-stone-300 rounded-xl">
           <h2 className="mb-4 text-xl text-center font-bold">
             Update Your The Food
