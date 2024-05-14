@@ -186,10 +186,10 @@ const AddFood = () => {
                   />
                 </div>
               </div>
-              <div className="flex items-center justify-center mt-5">
+              <div className="flex items-center justify-center mt-10">
                 <button
                   type="submit"
-                  className="btn w-full bg-stone-500 hover:bg-stone-400"
+                  className="btn btn-primary w-full"
                 >
                   Add Food
                 </button>

@@ -30,7 +30,7 @@ const MyFoodRequests = () => {
           Requested Foods <span>{filteredReqFoods.length}</span>
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
-          {reqFoods.map((food) => (
+          {filteredReqFoods.map((food) => (
             <div className="text-lg border rounded-lg p-6  bg-orange-100" key={food._id}>
               <h1 className="text-xl text-center font-bold">Requsted Food Information</h1>
               <h1 className="">
