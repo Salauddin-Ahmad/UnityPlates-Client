@@ -44,8 +44,7 @@ const FoodCards = () => {
             <div className="text-lg">
              
               <div className="flex items-center gap-8 ">
-              <p><span className="text-bold"></span> {food.userDetails.name}</p>
-                {/* <p className="">Image: </p> */}
+              <p><span className="text-bold"></span>Donator: {food.userDetails.name}</p>
                 <img
                   className="h-14 border-2 border-slate-600 rounded-xl"
                   src={food.userDetails.photo}
