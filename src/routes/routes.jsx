@@ -13,6 +13,7 @@ import FoodCards from "../pages/FoodCards/FoodCards";
 import FoodDetails from "../pages/FoodCards/FoodDetails";
 import UpdateFood from "@/pages/ManageFOODS/UpdateFood";
 import Testimonial from "@/components/Testimonial";
+import WhyUS from "@/components/WhyUs";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
             <Sliders></Sliders>
             <FoodCards></FoodCards>
             <Testimonial></Testimonial>
+            <WhyUS></WhyUS>
           </>
         ),
       },
