@@ -93,7 +93,7 @@ const Navbar = () => {
             src="https://i.postimg.cc/BQFMmtL1/imagesss.png"
             alt=""
           />
-          <span className="font-bold text-3xl">UnityPlates</span>
+          <span className="font-bold text-4xl">UnityPlates</span>
             </NavLink>
             </div>
             <ul

@@ -14,7 +14,6 @@ const axiosSecure = axios.create({
   // response interceptor
   axiosSecure.interceptors.response.use(
     (res) => {
-        console.log('tham moga')
       return res;
     },
     async (error) => {

@@ -17,7 +17,7 @@ const Modal = ({ onClose, foodDetails }) => {
 
       // Get the requestor's email
       const requestorEmail = user.user.email;
-      console.log(requestorEmail)
+      // console.log(requestorEmail)
 
       // Delete the existing food item from the current database
       await axios.delete(`${import.meta.env.VITE_API_URL}/deletefood/${foodDetails._id}`);
