@@ -117,14 +117,13 @@ const FoodItem = ({ food }) => {
       />
       <div className="card-body">
         <h5 className="card-title">Food Name: {food.foodName}</h5>
-        <p className="card-text">
-          Donator:{" "}
+        <p className="card-text flex gap-4 items-center">
+          Donator: {food.userDetails.name}
           <img
-            className=" h-14 rounded-full"
+            className=" h-14 rounded-xl"
             src={food.userDetails.photo}
             alt={food}
           />
-          Name: {food.userDetails.name}
         </p>
         <p className="card-text">Quantity: {food.foodQuantity}</p>
         <p className="card-text">Pickup Location: {food.pickupLocation}</p>
