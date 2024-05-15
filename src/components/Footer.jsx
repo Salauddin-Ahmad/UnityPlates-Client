@@ -21,10 +21,9 @@ const Footer = () => {
 
   return (
     <footer
-      data-aos="zoom-out"
-      className="relative w-full bg-inherit border  bg-[#FFFAE6] border-slate-300 pt-4"
+      className="relative w-full  border bg-[#FFFAE6] border-slate-300 pt-4"
     >
-      <div className="mx-auto w-full max-w-7xl px-8">
+      <div className="mx-auto w-full max-w-7xl px-8 ">
         <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
           <div>
 

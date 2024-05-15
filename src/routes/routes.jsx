@@ -23,8 +23,8 @@ const router = createBrowserRouter([
         path: "/",
         element: (
           <>
-            <Sliders></Sliders>,
-            <FoodCards></FoodCards>,
+            <Sliders></Sliders>
+            <FoodCards></FoodCards>
           </>
         ),
       },
@@ -36,7 +36,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/updateFood/:id",
-        element: <UpdateFood></UpdateFood>,
+        element: <PrivateRoute>
+          <UpdateFood></UpdateFood>
+        </PrivateRoute>,
       },
       {
         path: "/login",

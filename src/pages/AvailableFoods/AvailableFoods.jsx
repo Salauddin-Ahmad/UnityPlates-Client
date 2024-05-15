@@ -130,7 +130,7 @@ const FoodItem = ({ food }) => {
         <p className="card-text">Pickup Location: {food.pickupLocation}</p>
         <p className="card-text">Expire Date/Time: {food.expiredDate}</p>
         <p className="card-text">Additional Notes: {food.additionalNotes}</p>
-        <NavLink to={`/foodDetails/${food._id}`} className="btn btn-primary">
+        <NavLink to={`/foodDetails/${food._id}`} className="btn bg-teal-500 hover:bg-teal-700 w-full">
           View Details
         </NavLink>
       </div>

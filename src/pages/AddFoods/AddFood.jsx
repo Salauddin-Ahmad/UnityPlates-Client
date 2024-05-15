@@ -7,8 +7,6 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 
-
-
 const AddFood = () => {
   const [startDate, setStartDate] = useState(new Date());
   const userr = useAuth();
@@ -65,14 +63,11 @@ const AddFood = () => {
     <>
       <Helmet>
         <title> UnityPlates | Add Foods </title>
-        <meta
-          name="AddFoods"
-          content="Add Foods For Donation."
-        />
+        <meta name="AddFoods" content="Add Foods For Donation." />
       </Helmet>
 
       <section className="">
-        <div className="mt-6 mb-8 py-10 px-4 mx-auto max-w-2xl bg-[#b3afa2]  rounded-xl">
+        <div className="mt-6 mb-8 py-10 px-4 mx-auto max-w-2xl  bg-stone-300  rounded-xl">
           <h2 className="mb-4 text-xl text-center font-bold">
             Please Add The Foods
             <div className="">
@@ -198,7 +193,7 @@ const AddFood = () => {
                   </div>
                 </div>
                 <div className="flex items-center justify-center mt-10">
-                  <button type="submit" className="btn btn-primary w-full">
+                  <button type="submit" className="btn  bg-teal-500 hover:bg-teal-700 w-full">
                     Add Food
                   </button>
                 </div>

@@ -69,8 +69,8 @@ const SignUp = () => {
       <Helmet>
         <title> SkyLineEstates | Sign Up </title>
         <meta
-          name="description"
-          content="Login to your SkyLineEstates account."
+          name="Sign Up"
+          content="Sign Up to your SkyLineEstates account."
         />
       </Helmet>
       <div className="flex justify-center items-center min-h-[calc(100vh-306px)] my-12">

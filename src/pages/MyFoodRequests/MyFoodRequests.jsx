@@ -1,4 +1,5 @@
 import useAuth from "@/hooks/useAuth";
+import useAxiosSecure from "@/hooks/useAxiosSecure";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
@@ -7,60 +8,69 @@ const MyFoodRequests = () => {
   const [reqFoods, setReqFoods] = useState([]);
   const userI = useAuth();
   const userEmail = userI.user.email;
-  console.log(userEmail)
-  console.log(reqFoods)
+  const axiosSecure = useAxiosSecure();
 
-  
+  // useEffect(() => {
+  //   axios
+  //     .get(`${import.meta.env.VITE_API_URL}/getMyFoods/${userEmail}`, {
+  //       withCredentials: true,
+  //     })
+  //     .then((res) => {
+  //       setReqFoods(res.data);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching requested foods:", error);
+  //     });
+  // }, [userEmail]);
+
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_API_URL}/getMyFoods/${userEmail}`,
-      {
-        withCredentials: true,
-      }
-    )
+    axiosSecure
+      .get(`/getMyFoods/${userEmail}`)
       .then((res) => {
         setReqFoods(res.data);
       })
       .catch((error) => {
         console.error("Error fetching requested foods:", error);
       });
-  }, [userEmail]);
+  }, [userEmail, axiosSecure]);
+  
 
-  // fronend logic to  Filter requested foods based on the logged-in user's email
-  // const filteredReqFoods = reqFoods.filter((food) => food.requestorEmail === userEmail);
 
   return (
     <>
-        <Helmet>
+      <Helmet>
         <title> UnityPlates | Food Requests </title>
         <meta name="description" content="Login to your SkyLineEstates account." />
       </Helmet>
 
       <div className="my-6">
-        <h1 className="text-center text-bold text-2xl mb-10">
+        <h1 className="text-center text-bold text-2xl mb-6">
           Requested Foods <span>{reqFoods.length}</span>
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
-          {reqFoods.map((food) => (
-            <div className="text-lg border rounded-lg p-6  bg-orange-100" key={food._id}>
-              <h1 className="text-xl text-center font-bold">Requsted Food Information</h1>
-              <h1 className="">
-                <span className="font-bold">Donator Name: </span> {food.userDetails.name}
-              </h1>
-              <h1 className="">
-                <span className="font-bold">Pickup Location: </span> {food.pickupLocation}
-              </h1>
-              <h1 className="">
-                <span className="font-bold">Expired Date: </span> {food.expiredDate}
-              </h1>
-              <h1 className="">
-                <span className="font-bold">Requested Date: </span> {food.requestedDate}
-              </h1>
-              <h1 className="">
-                <span className="font-bold">Donated Amount: </span> {food.foodQuantity}
-              </h1>
-            </div>
-          ))}
-        </div>
+        <table className="table-auto w-full">
+          <thead>
+            <tr className="">
+              <th className="px-4 py-2 border-4 border-yellow-500">Donator </th>
+              <th className="px-4 py-2 border-4 border-yellow-500">Pickup Location</th>
+              <th className="px-4 py-2 border-4 border-yellow-500">Expired Date</th>
+              <th className="px-4 py-2 border-4 border-yellow-500">Requested Date</th>
+              <th className="px-4 py-2 border-4 border-yellow-500">Donated Amount</th>
+              <th className="px-4 py-2 border-4 border-yellow-500">Additional Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            {reqFoods.map((food) => (
+              <tr key={food._id}>
+                <td className="px-4 py-2 border-4 border-green-700 ">{food.userDetails.name}  <img className="w-10 h-10 rounded-xl" src={food.userDetails.photo} alt="" /></td>
+                <td className="px-4 py-2 border-4 border-green-700">{food.pickupLocation}</td>
+                <td className="px-4 py-2 border-4 border-green-700">{food.expiredDate}</td>
+                <td className="px-4 py-2 border-4 border-green-700">{food.requestedDate}</td>
+                <td className="px-4 py-2 border-4 border-green-700">{food.foodQuantity}</td>
+                <td className="px-4 py-2 border-4 border-green-700">{food.additionalNotes}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </>
   );

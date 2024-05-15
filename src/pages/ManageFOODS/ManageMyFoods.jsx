@@ -1,4 +1,5 @@
 import useAuth from "@/hooks/useAuth";
+import useAxiosSecure from "@/hooks/useAxiosSecure";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
@@ -8,6 +9,8 @@ import Swal from "sweetalert2";
 const ManageMyFoods = () => {
   const [control, setControl] = useState(false);
   const [foods, setFoods] = useState([]);
+  const axiosSecure = useAxiosSecure();
+
   // console.log(foods)
 
   const users = useAuth();
@@ -15,54 +18,31 @@ const ManageMyFoods = () => {
   const email = user.email;
   console.log(email);
 
-  // fetch all the food by email from db
+  // normal fetch all the food by email from db
+  // useEffect(() => {
+  //   axios
+  //     .get(`${import.meta.env.VITE_API_URL}/manageAllFoods/${email}`, {
+  //       withCredentials: true,
+  //     })
+  //     .then((res) => {
+  //       // console.log(res.data);
+  //       setFoods(res.data);
+  //     });
+  // }, [email, control]);
+
+  
+  // Fetch with Custom axiosSecure hook
   useEffect(() => {
-    axios
-      .get(`${import.meta.env.VITE_API_URL}/manageAllFoods/${email}`, {
-        withCredentials: true,
-      })
+    axiosSecure
+      .get(`/manageAllFoods/${email}`)
       .then((res) => {
-        // console.log(res.data);
         setFoods(res.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching all foods:", error);
       });
-  }, [email, control]);
-
-  // const handleDelete = (id) => {
-  //   Swal.fire({
-  //     title: "Do you want to delete this item?",
-
-  //     showCancelButton: true,
-  //     confirmButtonText: "Delete",
-  //   }).then((result) => {
-  //     if (result.isConfirmed) {
-  //       // Proceed with the deletion
-  //       // Delete the existing food item from the current database
-  //       axios
-  //         .delete(`${import.meta.env.VITE_API_URL}/deletefood/${id}`)
-  //         .then.then((res) => res.data)
-  //         .then((data) => {
-  //           if (data.deletedCount > 0) {
-  //             // Update state or perform any necessary action
-  //             setControl(!control);
-  //             Swal.fire("Deleted!", "The item has been deleted.", "success");
-  //           } else {
-  //             Swal.fire("Error", "Failed to delete the item.", "error");
-  //           }
-  //         })
-  //         .catch((error) => {
-  //           console.error("Error deleting item:", error);
-  //           Swal.fire(
-  //             "Error",
-  //             "An error occurred while deleting the item.",
-  //             "error"
-  //           );
-  //         });
-  //     } else if (result.isDenied) {
-  //       // Handle case where deletion is canceled
-  //       Swal.fire("Cancelled", "Deletion cancelled.", "info");
-  //     }
-  //   });
-  // };
+  }, [email, control, axiosSecure]);
+  
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -111,7 +91,7 @@ const ManageMyFoods = () => {
         />
       </Helmet>
 
-      <div className="overflow-x-auto lg:mx-20 xl:mx-24 ">
+      <div className="overflow-x-auto lg:mx-20 xl:mx-24 min-h-[420px]">
         <table className="table-auto">
           {/* head of the table */}
           <thead className="border w-full">

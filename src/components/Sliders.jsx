@@ -6,10 +6,9 @@ const Sliders = () => {
   return (
     <div className="mb-5">
 <h1 className="lg:text-3xl text-center pt-8 font- font-bold">
-    Your abundance can become another&apos;s joy{" "}
+    Your abundance can become anothers joy
 </h1>
-
-      <p className="w-[90%] mx-auto mt-3  ">
+      <p className="w-[90%] mx-auto mt-3 ">
         Experience the joy of sharing food and spreading happiness with our
         community-driven platform.
         Indulge in the satisfaction of not only satisfying your taste buds but also making a positive impact in someone elses life. Join us in creating moments of delight as
@@ -35,10 +34,9 @@ const Sliders = () => {
             alt=""
             style={{
               width: "100%",
-
               height: "80vh",
               marginTop: "20px",
-              borderRadius: "5px",
+              borderRadius: "5px"
             }}
           />
         </SwiperSlide>
@@ -50,7 +48,7 @@ const Sliders = () => {
               width: "100%",
               height: "80vh",
               marginTop: "20px",
-              borderRadius: "5px",
+              borderRadius: "5px"
             }}
           />
         </SwiperSlide>
@@ -62,7 +60,7 @@ const Sliders = () => {
               width: "100%",
               height: "80vh",
               marginTop: "20px",
-              borderRadius: "5px",
+              borderRadius: "5px"
             }}
           />
         </SwiperSlide>
@@ -74,7 +72,7 @@ const Sliders = () => {
               width: "100%",
               height: "80vh",
               marginTop: "20px",
-              borderRadius: "2px",
+              borderRadius: "2px"
             }}
           />
         </SwiperSlide>
@@ -86,7 +84,7 @@ const Sliders = () => {
               width: "100%",
               height: "80vh",
               marginTop: "20px",
-              borderRadius: "2px",
+              borderRadius: "2px"
             }}
           />
         </SwiperSlide>

@@ -46,7 +46,7 @@ const Modal = ({ onClose, foodDetails }) => {
   return (
     <>
       {/* Modal content */}
-      <div className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex flex-col justify-center items-center">
+      <div className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex flex-col justify-center items-center z-50">
         <div className="bg-white px-10 rounded-lg">
           {/* Content */}
           <div className="py-5">
