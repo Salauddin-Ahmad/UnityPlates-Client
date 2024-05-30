@@ -1,6 +1,7 @@
 import { Link, useRouteError } from "react-router-dom";
-
+import {motion} from 'framer-motion';
 const Error = () => {
+ 
     const error = useRouteError();
     return (
         <section className='bg-white '>
@@ -42,13 +43,15 @@ const Error = () => {
               </div>
             </div>
     
-            <div className='relative w-full mt-8 lg:w-1/2 lg:mt-0'>
+            <motion.div 
+            whileHover={{ scale: 1.07 }}
+            className='relative w-full mt-8 lg:w-1/2 lg:mt-0'>
               <img
                 className=' w-full lg:h-[32rem] h-80 md:h-96 rounded-lg object-cover '
                 src='https://i.postimg.cc/7699NX3X/b83a75e5407373f3aa276ba3f6cb0888.jpg'
                 alt=''
               />
-            </div>
+            </motion.div>
           </div>
         </section>
       )

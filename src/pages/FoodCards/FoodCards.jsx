@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-
+import {motion} from 'framer-motion';
 const FoodCards = () => {
   const [foods, setFoods] = useState([]);
   // console.log(foods);
@@ -29,14 +29,20 @@ const FoodCards = () => {
 </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {foods.map((food) => (
-          <div
+          <motion.div 
+          whileHover={{ scale: 1.04, backgroundColor: "#fff6d1" }}
+          whileTap={{ scale: 0.95 }}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
             key={food._id}
-            className="bg-orange-100 shadow-lg shadow-stone-600 rounded-md text-gray-600 p-4"
+            className=" bg-[#fffae6]   shadow-lg shadow-stone-600 rounded-md text-gray-600 p-4 border border-black"
           >
             <img
               src={food.image}
               alt={food.foodName}
               className="card-img-top w-full h-[200px]  mb-1 rounded-md"
+              
             />
             <h3 className="text-xl font-bold">{food.foodName}</h3>
 
@@ -61,7 +67,7 @@ const FoodCards = () => {
             <Link to={`/foodDetails/${food._id}`}>
               <button className="btn btn-accent mt-2">View Details</button>
             </Link>
-          </div>
+          </motion.div >
         ))}
 
     <div className="md:col-span-3 lg:col-span-3 w-full flex  justify-center mb-5">
