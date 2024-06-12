@@ -29,6 +29,7 @@
     "react-helmet-async": "^2.0.5",
     "react-hook-form": "^7.51.4",
     "react-hot-toast": "^2.4.1",
+    "react-lottie": "^1.2.4",
     "react-router-dom": "^6.23.0",
     "sort-by": "^0.0.2",
     "sweetalert2": "^11.11.0",

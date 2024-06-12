@@ -2,6 +2,7 @@ import { Link, useRouteError } from "react-router-dom";
 import {motion} from 'framer-motion';
 const Error = () => {
  
+ 
     const error = useRouteError();
     return (
         <section className='bg-white '>
