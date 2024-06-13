@@ -1,8 +1,8 @@
 
 # welcome To UnityPlates - Food Sharing Website
 ## Live Link: https://unityplate-3fee4.web.app
-## Github ClientSide Repositorie: https://github.com/Porgramming-Hero-web-course/b9a11-client-side-Salauddin-Ahmad
-## Github ServerSide Repositorie: https://github.com/Porgramming-Hero-web-course/b9a11-server-side-Salauddin-Ahmad
+## Github ClientSide Repositorie: https://github.com/Salauddin-Ahmad/UnityPlates-Client
+## Github ServerSide Repositorie: https://github.com/Salauddin-Ahmad/UnityPlates-Server
 
 Welcome to UnityPlates, a platform dedicated to sharing food and reducing food waste! UnityPlates allows users to donate, request, update, and delete food listings, fostering a community-driven approach to addressing food scarcity and promoting sustainability.
 
