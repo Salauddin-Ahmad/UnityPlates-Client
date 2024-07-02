@@ -47,6 +47,11 @@ To start using UnityPlates, follow these steps:
 - Manage Listings: Manage your own listings by updating or deleting them as needed to keep the information accurate.
 - Technologies Used
 
+Setting Up the Project Locally
+1. Clone the repository.
+2. Run npm install to install dependencies.
+3. Set up environment variables for Firebase and MongoDB.
+4 .Run npm start to start the development server.
 
 ## UnityPlates is built using the following technologies:
 
